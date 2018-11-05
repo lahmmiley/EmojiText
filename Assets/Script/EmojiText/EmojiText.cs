@@ -76,7 +76,6 @@ namespace EmojiText
             int tagStartIndex = 0;  //解析字符串后的tag的首个匹配下标
             int lastMatchEndIndex = 0;    //sourceString上次匹配成功的结束下标
             int count = mc.Count;
-            Debug.LogError(count);
             for (int i = 0; i < count; i++)
             {
                 Match match = mc[i];
