@@ -37,17 +37,6 @@ namespace EmojiText
 
         private static readonly Regex _regex = new Regex(@"<t=(.+?)>", RegexOptions.Singleline);
 
-        public override string text
-        {
-            set
-            {
-                _lastText = value;
-                _lastSize = fontSize;
-                _dirty = false;
-                base.text = Parse(value);
-            }
-        }
-
         protected override void OnDestroy()
         {
             if (_showImageList != null)
@@ -65,6 +54,17 @@ namespace EmojiText
             if (_showEmojiList != null)
             {
                 ListPool<CacheEmoji>.Release(_showEmojiList);
+            }
+        }
+
+        public override string text
+        {
+            set
+            {
+                _lastText = value;
+                _lastSize = fontSize;
+                _dirty = false;
+                base.text = Parse(value);
             }
         }
 
